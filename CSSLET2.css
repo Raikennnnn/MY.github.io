@@ -1,0 +1,89 @@
+/* Body styles */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('galaxy.gif'); /* Background image for the whole page */
+  background-size: cover;
+  background-position: center;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Container that centers the notebook paper */
+.message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Closed and open states of the notebook paper */
+.notebook-paper {
+  width: 90vw;
+  max-width: 800px;
+  height: 150px; /* Closed state: small size */
+  max-height: 150px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+  background-image: 
+      linear-gradient(to bottom, rgba(52, 152, 219, 0.2) 2px, transparent 2px), /* Lightened horizontal blue lines */
+      linear-gradient(to left, rgba(231, 76, 60, 0.2) 1px, transparent 1px); /* Lightened vertical red margin */
+  background-size: 100% 40px, 5px 100%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer; /* Indicates that it's clickable */
+  transition: height 0.5s ease, max-height 0.5s ease; /* Smooth transition for height */
+  overflow: hidden; /* Hide content when closed */
+}
+
+/* Open state of the notebook */
+.notebook-paper.open {
+  height: 90vh; /* Full height when opened */
+  max-height: 90vh;
+  padding: 40px;
+  overflow-y: auto; /* Enable scrolling if content overflows */
+  display: flex; /* Flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Style for the message text */
+.notebook-paper p {
+  font-size: 20px; /* Larger font size for better readability */
+  line-height: 1.5; /* Increase line height for better spacing between lines */
+  color: #000; /* Black text for better contrast */
+  font-family: 'Georgia', serif;
+  margin: 0;
+  text-align: center; /* Center text */
+  max-width: 90%; /* Limit the width to prevent text from touching edges */
+}
+
+/* Hide the full message initially */
+.hidden {
+  display: none;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .notebook-paper {
+    width: 80vw;
+    height: 150px; /* Smaller height for mobile closed state */
+  }
+
+  .notebook-paper.open {
+    height: 80vh; /* Adjust height for mobile open state */
+  }
+
+  .notebook-paper p {
+    font-size: 18px; /* Smaller font for mobile */
+  }
+}
