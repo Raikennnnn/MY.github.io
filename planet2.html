@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planet 2 Slideshow</title>
+  <link rel="stylesheet" href="planet2.css"> <!-- Link to planet 2 CSS -->
+</head>
+<body>
+
+  <!-- Container for the slideshow -->
+  <div class="container">
+    <div class="slideshow">
+      <img src="pic1.jpg" alt="Slide 1" class="slide active">
+      <img src="pic2.jpg" alt="Slide 2" class="slide">
+      <img src="pic3.jpg" alt="Slide 3" class="slide">
+      <img src="pic4.jpg" alt="Slide 4" class="slide">
+      <img src="pic5.jpg" alt="Slide 5" class="slide">
+      <img src="pic6.jpg" alt="Slide 6" class="slide">
+      <img src="pic7.jpg" alt="Slide 7" class="slide">
+      <img src="pic8.jpg" alt="Slide 8" class="slide">
+      <img src="pic9.jpg" alt="Slide 8" class="slide">
+      <img src="pic10.jpg" alt="Slide 8" class="slide">
+      <img src="pic11.jpg" alt="Slide 8" class="slide">
+      <img src="pic12.jpg" alt="Slide 8" class="slide">
+      <img src="pic13.jpg" alt="Slide 8" class="slide">
+      <img src="pic14.jpg" alt="Slide 8" class="slide">
+      <img src="pic15.jpg" alt="Slide 8" class="slide">
+      <img src="pic16.jpg" alt="Slide 8" class="slide">
+      <img src="pic17.jpg" alt="Slide 8" class="slide">
+      <img src="pic18.jpg" alt="Slide 8" class="slide">
+      <img src="pic19.jpg" alt="Slide 8" class="slide">
+      <img src="pic20.jpg" alt="Slide 8" class="slide">
+    </div>
+
+    <!-- Left and right navigation arrows -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+
+  <!-- Audio that plays when arrows are clicked -->
+  <audio id="background-music">
+    <source src="LeeHi - ONLY (Lyrics).mp3" type="audio/mpeg"> <!-- Replace with your audio file -->
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const music = document.getElementById('background-music');
+    let isMusicPlaying = false;
+
+    // Function to change slides
+    function changeSlide(n) {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + n + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      playMusic(); // Play music when arrow is clicked
+    }
+
+    // Function to play music if it's not already playing
+    function playMusic() {
+      if (!isMusicPlaying) {
+        music.play();
+        isMusicPlaying = true;
+      }
+    }
+
+    // Event listeners for left and right arrows
+    document.querySelector('.prev').addEventListener('click', () => {
+      changeSlide(-1);
+    });
+    document.querySelector('.next').addEventListener('click', () => {
+      changeSlide(1);
+    });
+  </script>
+
+</body>
+</html>
