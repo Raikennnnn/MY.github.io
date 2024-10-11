@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Love Letter</title>
+  <link rel="stylesheet" href="CSSLET2.css"> <!-- External CSS file -->
+</head>
+<body>
+
+<!-- Background music (won't start automatically, only after user interaction) -->
+<audio id="background-music" loop>
+  <source src="Your Universe (Acoustic).mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+  <!-- Message container with notebook paper that opens on click -->
+  <div class="message-container">
+    <div class="notebook-paper" id="notebook">
+      <!-- Closed state content (Open me message) -->
+      <p id="closed-text">Open me!!</p>
+
+      <!-- Full letter content (hidden at first) -->
+      <p id="full-message" class="hidden">
+        Happy monthsary to us baby! First of all gusto kong sabihin na hindi lahat to code ko HAHAHAAA, you know what I meant by that syempre.
+        I just want you to know that Im thankful that I met you (ikaw nag chat HAHAHAHAHA) I love you so much and thank you for being there for me always,
+        hope you like what I made kahit parang broken and kulang kulang pagkagawa ko HAHAAHHAHA, nagsisisi me now di ako nakinig kay sir super noon edi sana mas maganda to HAHAHAHAAHAH.
+        Im sorry kung di siya written because I wanted it to be maganda naman kasi Im really not good in creating mga stuff tulad nung letter mo sakin huhuhuhu, I'll bawi to you sunod
+        bilihan sana kita kb kaso sabi mo RK gusto mo kaya next time nalang HAHAHAHAHA, I'LL BAWI SAYO LIBRE NALANG MUNA KITA PROBEN HEHEHEHE. In this past 3 months na naging tayo you
+        made me realize a lot of things whenever we fight, you also helped me understand you better and I'm thankful that you have the patience to teach or tell me about your mental health,
+        as I was always saying, I want you to tell me every time you have a problem, I'll always be right by your side whatever happen, I love love love you so much baby!! I wanted to say
+        a lot to you kaso di ko alam pano ko siya sasabihin HAHAAHAHAHAHA, I may not be a perfect boyfriend but I'll do my best to be the perfect that you deserve. Sorry for the mistakes
+        I've done and for having so much pride (SOMETIMES LANG) whenever we fight, but I assure you that I wont do it again and be more careful to the things that I do. I do not want to see
+        you crying and thinking that you (or your BPD) are the reason whenever we fight, you won't be acting like that if I did not do something wrong dibaaa?? I want to show you how much
+        I love you in a lot of ways but I do not know how to do it HAHAHAAHAH, I hope you know how much I really love you. Just like the song says "You hold me like I'm the one who's precious I hate to break it to you, but it's just the other way around.",
+        I love you yve!! I'm so lucky na nagchat ka sakin hehehehehe. ILOVEYOU SO MUCH!!!!!!
+         <br>
+
+    </div>
+  </div>
+
+<script>
+  // Function to check if the music should play based on URL
+  function playMusicIfNeeded() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var playMusic = urlParams.get('playMusic');
+    if (playMusic === 'true') {
+      // Wait for user interaction to play music
+      document.addEventListener('click', function() {
+        var music = document.getElementById('background-music');
+        music.play();  // Play the audio after the user clicks anywhere on the page
+      }, { once: true });
+    }
+  }
+
+  // Toggle between closed and open note
+  document.getElementById('notebook').addEventListener('click', function() {
+    // Hide "Open me" text
+    document.getElementById('closed-text').classList.add('hidden');
+
+    // Show full letter
+    document.getElementById('full-message').classList.remove('hidden');
+
+    // Expand the note to full size
+    this.classList.toggle('open');
+  });
+
+  // Call the function when the page loads
+  window.onload = playMusicIfNeeded;
+</script>
+
+</body>
+</html>
