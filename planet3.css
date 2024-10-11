@@ -1,0 +1,38 @@
+/* Import shared background styles */
+@import url('CSSLET.css');
+
+
+/* Container for the GIF and note */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+    background-image: url('galaxy.gif'); /* Background image for the whole page */
+    background-size: cover;
+    background-position: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Center the GIF */
+  .gif-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .centered-gif {
+    max-width: 100%; /* Ensures responsiveness */
+    height: auto; /* Maintains aspect ratio */
+  }
+  
+  /* Note under the GIF */
+  .note {
+    font-size: 1.5rem;
+    color: #f3f3f3;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
