@@ -1,0 +1,101 @@
+/* Body styles */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('galaxy.gif'); /* Replace with your background image */
+  background-size: cover;
+  background-position: center;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  position: relative; /* Allows absolute positioning for the note */
+}
+
+/* Container for the center GIF and galaxy images */
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Ensure no overflow */
+}
+
+/* Centered GIF */
+.center-gif {
+  width: 250px;
+  height: auto;
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.center-gif:hover {
+  transform: scale(1.1); /* Slight growth on hover */
+}
+
+/* Galaxy image shared styles */
+.galaxy-image {
+  width: 150px;
+  height: auto;
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  z-index: 2;
+}
+
+.galaxy-image:hover {
+  transform: scale(1.1); /* Slight growth on hover */
+}
+
+/* Specific positioning for each planet */
+
+/* Planet 1 (Earth) - Positioned in top-left */
+.planet-1 {
+  top: 5%;
+  left: 5%;
+}
+
+/* Planet 2 (Heart) - Positioned in bottom-left */
+.planet-2 {
+  bottom: 15%;
+  left: 20%;
+}
+
+/* Planet 3 (Saturn) - Positioned in bottom-right */
+.planet-3 {
+  bottom: 10%;
+  right: 10%;
+}
+
+/* Styling for the Happy 3rd Monthsary Note */
+.monthsary-note {
+  position: absolute;
+  top: 20px; /* Adjusts the top margin */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  color: #ffffff; /* White color to stand out */
+  font-family: 'Cursive', sans-serif; /* Stylish cursive font */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds a soft shadow for depth */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+  padding: 10px 20px; /* Padding around the text */
+  border-radius: 15px; /* Rounded corners */
+  z-index: 5; /* Ensures it stays above other elements */
+  animation: fadeIn 2s ease-in; /* Optional fade-in effect */
+}
+
+/* Optional fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
